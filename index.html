@@ -11,9 +11,31 @@
         David McGill - Personal Home Page
     </h1>
 
+    <h1 id=bigOne></h1>
+
     <h2>This is awesome</h2>
 
     <p>This is a paragraph</p>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBOFJtQXhf0EDOtsrMfNAtzaNDGINxnlec",
+    authDomain: "vanwezelushers.firebaseapp.com",
+    databaseURL: "https://vanwezelushers.firebaseio.com",
+    storageBucket: "vanwezelushers.appspot.com",
+    messagingSenderId: "36922932024"
+  };
+  firebase.initializeApp(config);
+
+  var bigOne = document.getElementById('bigOne');
+  var dbRef = firebase.database().ref().child('text');
+  dbRef.on('value', snap => bigOne.innertext = snap.val());
+
+  
+</script>
 
 
 </BODY>
